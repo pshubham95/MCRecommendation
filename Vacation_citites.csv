@@ -1,17 +1,17 @@
-﻿Locations,Budget,Weather,Historical places,Type of Terrain,Family Friendly,Party Places,Cuisine,Local Transport,Social Enviroment,Season,Accomodation
-Paris,high,cold ,yes,Flat,no,yes,continental,Public,friendly,Peak Season,Hotel
-Las Vegas,high,warm,no,Mountain,no,yes,continental,Rental,friendly,Off-Season,Hotel
-London,high,cold ,yes,Flat,yes,yes,continental,Public,friendly,Off-Season,Hotel
-Amsterdam,medium,cold ,yes,River,no,yes,local,Public,acceptable,Peak Season,Hostel
-Peru,medium,warm,yes,Coastal,yes,no,local,Rental,friendly,Off-Season,Hostel
-Cuba,low,humid,yes,Mountain,yes,no,local,Rental,friendly,Off-Season,Homestay
-Manali,low,cold ,no,Mountain,yes,no,local,Rental,friendly,Peak Season,Homestay
-Hawaii,medium,tropical,no,Island,yes,yes,local,Rental,friendly,Peak Season,Hotel
-Niagara Falls,medium,cold ,no,Mountain,yes,no,continental,Public,acceptable,Peak Season,Homestay
-Rome ,high,warm,yes,River,yes,yes,local,Public,acceptable,Off-Season,Hotel
-Vatican City,high,cold ,yes,Mountain,yes,no,continental,Public,acceptable,Off-Season,Hotel
-Sri Lanka,low,tropical,yes,Coastal,yes,no,local,Rental,friendly,Peak Season,Homestay
-Philippines,low,tropical,no,Island,yes,yes,local,Rental,friendly,Off-Season,Hotel
-Budapest,medium,humid,yes,Forest,yes,no,continental,Public,acceptable,Peak Season,Hostel
-South Africa,medium,warm,yes,Desert,yes,no,local,Rental,friendly,Off-Season,Hostel
-Moscow,medium,cold ,no,Flat,yes,yes,continental,Public,acceptable,Peak Season,Hotel
+﻿Locations,Image Url,Budget,Weather,Historical places,Type of Terrain,Family Friendly,Party Places,Cuisine,Local Transport,Social Enviroment,Season,Accomodation
+Paris,https://static.independent.co.uk/s3fs-public/thumbnails/image/2019/08/07/08/paris.jpg?w968h681,high,cold ,yes,Flat,no,yes,continental,Public,friendly,Peak Season,Hotel
+Las Vegas,https://img.theculturetrip.com/768x432/wp-content/uploads/2019/05/feature_peeak0.jpg,high,warm,no,Mountain,no,yes,continental,Rental,friendly,Off-Season,Hotel
+London,https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Palace_of_Westminster_from_the_dome_on_Methodist_Central_Hall.jpg/1000px-Palace_of_Westminster_from_the_dome_on_Methodist_Central_Hall.jpg,high,cold ,yes,Flat,yes,yes,continental,Public,friendly,Off-Season,Hotel
+Amsterdam,https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/KeizersgrachtReguliersgrachtAmsterdam.jpg/1200px-KeizersgrachtReguliersgrachtAmsterdam.jpg,medium,cold ,yes,River,no,yes,local,Public,acceptable,Peak Season,Hostel
+Peru,https://media.gadventures.com/media-server/cache/c1/76/c176acf764c928d66a7af017aa03d66d.jpg,medium,warm,yes,Coastal,yes,no,local,Rental,friendly,Off-Season,Hostel
+Cuba,https://lp-cms-production.imgix.net/2019-06/b6cc5c258ca09474c5163178f01455e6-cuba.jpeg?fit=crop&q=40&sharp=10&vib=20&auto=format&ixlib=react-8.6.4,low,humid,yes,Mountain,yes,no,local,Rental,friendly,Off-Season,Homestay
+Manali,https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Manali_jan.jpg/800px-Manali_jan.jpg,low,cold ,no,Mountain,yes,no,local,Rental,friendly,Peak Season,Homestay
+Hawaii,https://www.gohawaii.com/sites/default/files/styles/image_gallery_bg_xl/public/hero-unit-images/Homepage_Hero_042019v1.jpg?itok=JquDLD-V,medium,tropical,no,Island,yes,yes,local,Rental,friendly,Peak Season,Hotel
+Niagara Falls,https://www.niagarafallstourism.com/site/assets/files/1/niagara-falls-aerial-overview.jpg,medium,cold ,no,Mountain,yes,no,continental,Public,acceptable,Peak Season,Homestay
+Rome ,https://www.fodors.com/wp-content/uploads/2018/10/HERO_UltimateRome_Hero_shutterstock789412159.jpg,high,warm,yes,River,yes,yes,local,Public,acceptable,Off-Season,Hotel
+Vatican City,https://i.ytimg.com/vi/NXnSZ2-eSr0/maxresdefault.jpg,high,cold ,yes,Mountain,yes,no,continental,Public,acceptable,Off-Season,Hotel
+Sri Lanka,https://lp-cms-production.imgix.net/2019-06/b4fbc706dab2a70a96588309ed268a1a-sri-lanka.jpeg?fit=crop&q=40&sharp=10&vib=20&auto=format&ixlib=react-8.6.4,low,tropical,yes,Coastal,yes,no,local,Rental,friendly,Peak Season,Homestay
+Philippines,https://www.nationalgeographic.com/content/dam/travel/commercial/2019/international/philippinesdepartmentoftourism/article1-know-before-you-go/steep-karst-cliffs-of-el-nido-in-palawan.adapt.1900.1.jpg,low,tropical,no,Island,yes,yes,local,Rental,friendly,Off-Season,Hotel
+Budapest,https://img.huffingtonpost.com/asset/5c41f03b2300002f001f9efc.jpeg?ops=scalefit_720_noupscale,medium,humid,yes,Forest,yes,no,continental,Public,acceptable,Peak Season,Hostel
+South Africa,http://storage.news.nowmedia.co.za/medialibrary/Article/195037/South-African-Tourism-meets-with-Riyadh-travel-partners-800x400.jpeg,medium,warm,yes,Desert,yes,no,local,Rental,friendly,Off-Season,Hostel
+Moscow,https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Panoramic_view_of_Moscow1.jpg/600px-Panoramic_view_of_Moscow1.jpg,medium,cold ,no,Flat,yes,yes,continental,Public,acceptable,Peak Season,Hotel

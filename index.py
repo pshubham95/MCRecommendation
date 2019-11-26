@@ -106,14 +106,15 @@ def getNearestRelocation():
 
         locations.append({
             'city': row['City'].lower().strip(),
-            'taxes': content['taxes'],
-            'crime_rate': content['crime_rate'],
-            'rent': content['rent'],
-            'traffic': content['traffic'].lower().strip(),
-            'education': content['standard_of_education'].lower().strip(),
-            'population_density': content['population_density'].lower().strip(),
-            'living_expense': content['living_expenses'].lower().strip(),
-            'dist_from_cities': content['distance_from_other_cities'].lower().strip(),
+            'taxes': row['Taxes'],
+            'crime_rate': row['crime rate'],
+            'image_url': row['Image link'],
+            'rent': row['Housing Costs (Rent)'],
+            'traffic': row['Traffic'].lower().strip(),
+            'standard_of_education': row['Standard of Education'].lower().strip(),
+            'population_density': row['Population density'].lower().strip(),
+            'living_expense': row['Living Expenses'].lower().strip(),
+            'dist_cities': row['distance from other cities'].lower().strip(),
             'vector': t
         })
 
@@ -263,6 +264,7 @@ def getNearestVacation():
             'location': row['Locations'].lower().strip(),
             'budget':row['Budget'].lower().strip(),
             'weather': row['Weather'].lower().strip(),
+            'image_url': row['Image Url'].lower().strip(),
             'historical_places': row['Historical places'].lower().strip(),
             'type_of_terrain': row['Type of Terrain'].lower().strip(),
             'family_friendly': row['Family Friendly'].lower().strip(),

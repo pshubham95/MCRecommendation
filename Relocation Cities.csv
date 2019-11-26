@@ -1,16 +1,16 @@
-City,Taxes,weather,crime rate,access of local transport,Population density,Living Expenses,distance from other cities,Housing Costs (Rent),Traffic,Standard of Education
-New York City,8.875,Cold humid,18.71,road water metro,high,more than 100k,under 10 miles,1773,high,Graduate
-Los Angeles,8.75,dry humid,27.56,road water metro air,high,more than 100k,under 10 miles,300,high,Graduate
-Houston,8.25,dry humid,54,road metro air,moderate,40k to 100k,10 to 50 miles,142,moderate,Graduate
-kansas City,8.61,dry humid,62,road,low,40k to 100k,10 to 50 miles,139,moderate,Graduate
-Anchorage,0,Cold humid dry,1.2,road air,high,40k to 100k,more than 100 miles,166,low,Graduate
-Hattiesburg,7,dry humid,48,road,high,under 40k,10 to 50 miles,64,low,High School
-Charleston,9,dry humid,3.02,road,moderate,40k to 100k,10 to 50 miles,212,low,College
-rock springs,5,dry,20.68,road,low,40k to 100k,10 to 50 miles,172,low,College
-Cerrilios,7.13,dry cold,47.25,road,low,under 40k,more than 100 miles,165,low,High School
-Grand Forks,7.25,cold humid,24.79,road,low,under 40k,10 to 50 miles,143,low,College
-San Francicso,8.5,warm humid,70,road water metro,high,more than 100k,under 10 miles,1081,high,Graduate
-Norman,8.75,cold humid,33.33,road air,moderate,under 40k,10 to 50 miles,121,moderate,High School
-Tampa,8.5,hot humid,29.2,road water metro,high,40k to 100k,under 10 miles,200,high,College
-Tuscon,8.7,hot humid,34.23,road air,moderate,40k to 100k,under 10 miles,141,moderate,Graduate
-Rockford,8.25,cold humid,24.5,road water metro,moderate,40k to 100k,10 to 50 miles,72,moderate,High School
+City,Image link,Taxes,weather,crime rate,access of local transport,Population density,Living Expenses,distance from other cities,Housing Costs (Rent),Traffic,Standard of Education
+New York City,https://thenypost.files.wordpress.com/2019/03/190309-nyc-bankrupt.jpg?quality=90&strip=all&w=618&h=410&crop=1,8.875,Cold humid,18.71,road water metro,high,more than 100k,under 10 miles,1773,high,Graduate
+Los Angeles,https://upload.wikimedia.org/wikipedia/commons/3/30/Echo_Park_Lake_with_Downtown_Los_Angeles_Skyline.jpg,8.75,dry humid,27.56,road water metro air,high,more than 100k,under 10 miles,300,high,Graduate
+Houston,https://premiumparking-api.s3.amazonaws.com/market/HOUSTON.jpg,8.25,dry humid,54,road metro air,moderate,40k to 100k,10 to 50 miles,142,moderate,Graduate
+kansas City,https://dtjew9b6f6zyn.cloudfront.net/wp-content/uploads/2019/03/MO-Kansas-City-GettyImages-992352644-o.jpg,8.61,dry humid,62,road,low,40k to 100k,10 to 50 miles,139,moderate,Graduate
+Anchorage,https://www.adn.com/resizer/0U06pcHV8ihQiM9t2DzlzY3VL4g=/1200x0/s3.amazonaws.com/arc-wordpress-client-uploads/adn/wp-content/uploads/2018/02/02073625/180202-aerials-0216.jpg,0,Cold humid dry,1.2,road air,high,40k to 100k,more than 100 miles,166,low,Graduate
+Hattiesburg,https://upload.wikimedia.org/wikipedia/commons/3/3b/Hattiesburg_Flags.jpg,7,dry humid,48,road,high,under 40k,10 to 50 miles,64,low,High School
+Charleston,https://www.smartertravel.com/uploads/2018/03/charleston-1400x500.jpg,9,dry humid,3.02,road,moderate,40k to 100k,10 to 50 miles,212,low,College
+rock springs,https://upload.wikimedia.org/wikipedia/commons/e/e5/DowntownRS.jpg,5,dry,20.68,road,low,40k to 100k,10 to 50 miles,172,low,College
+Cerrilios,http://www.cerrillosnewmexico.com/_/rsrc/1323705620939/home/1st_street_intro.jpg,7.13,dry cold,47.25,road,low,under 40k,more than 100 miles,165,low,High School
+Grand Forks,https://upload.wikimedia.org/wikipedia/commons/1/16/FEMA_-_29438_-_Photograph_by_Brenda_Riskey_taken_on_05-17-2006_in_North_Dakota.jpg,7.25,cold humid,24.79,road,low,under 40k,10 to 50 miles,143,low,College
+San Francicso,https://www.usnews.com/dims4/USNEWS/3e2b4ba/2147483647/thumbnail/640x420/quality/85/?url=http%3A%2F%2Fcom-usnews-beam-media.s3.amazonaws.com%2Fbb%2Fc8%2F59c40cdd4cacbc74086e09589bff%2F1064-the-bay-lights-3-james-ewing.jpg,8.5,warm humid,70,road water metro,high,more than 100k,under 10 miles,1081,high,Graduate
+Norman,https://vignette.wikia.nocookie.net/people-dont-have-to-be-anything-else/images/1/10/8CC01706-E487-C593-170581351488477F.jpg/revision/latest?cb=20151212135101,8.75,cold humid,33.33,road air,moderate,under 40k,10 to 50 miles,121,moderate,High School
+Tampa,https://www.theinvisibletourist.com/wp-content/uploads/2018/05/featured_56.jpg,8.5,hot humid,29.2,road water metro,high,40k to 100k,under 10 miles,200,high,College
+Tuscon,https://www.tucsonaz.gov/files/images/skyline-dusk.jpg,8.7,hot humid,34.23,road air,moderate,40k to 100k,under 10 miles,141,moderate,Graduate
+Rockford,https://upload.wikimedia.org/wikipedia/commons/3/36/Rockford%2C_IL_Rockford_Register_Star_01.JPG,8.25,cold humid,24.5,road water metro,moderate,40k to 100k,10 to 50 miles,72,moderate,High School
