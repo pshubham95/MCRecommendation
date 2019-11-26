@@ -105,7 +105,15 @@ def getNearestRelocation():
             t.append(-1)
 
         locations.append({
-            'city': row['City'],
+            'city': row['City'].lower().strip(),
+            'taxes': content['taxes'],
+            'crime_rate': content['crime_rate'],
+            'rent': content['rent'],
+            'traffic': content['traffic'].lower().strip(),
+            'education': content['standard_of_education'].lower().strip(),
+            'population_density': content['population_density'].lower().strip(),
+            'living_expense': content['living_expenses'].lower().strip(),
+            'dist_from_cities': content['distance_from_other_cities'].lower().strip(),
             'vector': t
         })
 
@@ -173,12 +181,16 @@ def getNearestRelocation():
         vector_cmp.append(-1)
 
     for i in range(0, len(locations)):
-        locations[i]['dist'] = 1 - spatial.distance.cosine(locations[i]['vector'], vector_cmp)
+        locations[i]['similarity'] = 1 - spatial.distance.cosine(locations[i]['vector'], vector_cmp)
     print(locations)
     res = []
-    locations = sorted(locations, key=lambda i: i['dist'], reverse=True)
+    locations = sorted(locations, key=lambda i: i['similarity'], reverse=True)
     for i in range(0, 3):
-        res.append({'city': locations[i]['city'], 'similarity': locations[i]['dist']})
+        res.append(locations[i])
+
+    for i in range(0, len(res)):
+        del res[i]['vector']
+
     return jsonify(sorted(res, key = lambda i: i['similarity'], reverse=True)) , 200
 
 @app.route('/getNearestVacation', methods=['post'])
@@ -248,7 +260,18 @@ def getNearestVacation():
     df = pd.read_csv('Vacation_citites.csv')
     for index, row in df.iterrows():
         locations.append({
-            'location': row['Locations'].lower(),
+            'location': row['Locations'].lower().strip(),
+            'budget':row['Budget'].lower().strip(),
+            'weather': row['Weather'].lower().strip(),
+            'historical_places': row['Historical places'].lower().strip(),
+            'type_of_terrain': row['Type of Terrain'].lower().strip(),
+            'family_friendly': row['Family Friendly'].lower().strip(),
+            'party_places': row['Party Places'].lower().strip(),
+            'cuisine': row['Cuisine'].lower().strip(),
+            'transport': row['Local Transport'].lower().strip(),
+            'social_env': row['Social Enviroment'].lower().strip(),
+            'season': row['Season'].lower().strip(),
+            'accomodation': row['Accomodation'].lower().strip(),
             'vector':[ budget[row['Budget'].lower().strip()],
             weather[row['Weather'].lower().strip()],
             historical[row['Historical places'].lower().strip()],
@@ -276,13 +299,16 @@ def getNearestVacation():
     ]
 
     for i in range(0, len(locations)):
-        locations[i]['dist'] = 1 - spatial.distance.cosine(locations[i]['vector'], vector_cmp)
+        locations[i]['similarity'] = 1 - spatial.distance.cosine(locations[i]['vector'], vector_cmp)
 
-    locations = sorted(locations, key=lambda i: i['dist'], reverse=True)
+    locations = sorted(locations, key=lambda i: i['similarity'], reverse=True)
     res = []
     for i in range(0, 3):
-        res.append({'city': locations[i]['location'], 'similarity': locations[i]['dist']})
-    print(locations)
+        res.append(locations[i])
+
+    for i in range(0, len(res)):
+        del res[i]['vector']
+    #print(locations)
     return jsonify(sorted(res, key = lambda i: i['similarity'], reverse=True)) , 200
 
 if __name__ == '__main__':
