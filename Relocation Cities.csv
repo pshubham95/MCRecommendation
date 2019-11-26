@@ -1,0 +1,16 @@
+City,Taxes,weather,crime rate,access of local transport,Population density,Living Expenses,distance from other cities,Housing Costs (Rent),Traffic,Standard of Education
+New York City,8.875,Cold humid,18.71,road water metro,high,more than 100k,under 10 miles,1773,high,Graduate
+Los Angeles,8.75,dry humid,27.56,road water metro air,high,more than 100k,under 10 miles,300,high,Graduate
+Houston,8.25,dry humid,54,road metro air,moderate,40k to 100k,10 to 50 miles,142,moderate,Graduate
+kansas City,8.61,dry humid,62,road,low,40k to 100k,10 to 50 miles,139,moderate,Graduate
+Anchorage,0,Cold humid dry,1.2,road air,high,40k to 100k,more than 100 miles,166,low,Graduate
+Hattiesburg,7,dry humid,48,road,high,under 40k,10 to 50 miles,64,low,High School
+Charleston,9,dry humid,3.02,road,moderate,40k to 100k,10 to 50 miles,212,low,College
+rock springs,5,dry,20.68,road,low,40k to 100k,10 to 50 miles,172,low,College
+Cerrilios,7.13,dry cold,47.25,road,low,under 40k,more than 100 miles,165,low,High School
+Grand Forks,7.25,cold humid,24.79,road,low,under 40k,10 to 50 miles,143,low,College
+San Francicso,8.5,warm humid,70,road water metro,high,more than 100k,under 10 miles,1081,high,Graduate
+Norman,8.75,cold humid,33.33,road air,moderate,under 40k,10 to 50 miles,121,moderate,High School
+Tampa,8.5,hot humid,29.2,road water metro,high,40k to 100k,under 10 miles,200,high,College
+Tuscon,8.7,hot humid,34.23,road air,moderate,40k to 100k,under 10 miles,141,moderate,Graduate
+Rockford,8.25,cold humid,24.5,road water metro,moderate,40k to 100k,10 to 50 miles,72,moderate,High School

@@ -1,0 +1,17 @@
+﻿Locations,Budget,Weather,Historical places,Type of Terrain,Family Friendly,Party Places,Cuisine,Local Transport,Social Enviroment,Season,Accomodation
+Paris,high,cold ,yes,Flat,no,yes,continental,Public,friendly,Peak Season,Hotel
+Las Vegas,high,warm,no,Mountain,no,yes,continental,Rental,friendly,Off-Season,Hotel
+London,high,cold ,yes,Flat,yes,yes,continental,Public,friendly,Off-Season,Hotel
+Amsterdam,medium,cold ,yes,River,no,yes,local,Public,acceptable,Peak Season,Hostel
+Peru,medium,warm,yes,Coastal,yes,no,local,Rental,friendly,Off-Season,Hostel
+Cuba,low,humid,yes,Mountain,yes,no,local,Rental,friendly,Off-Season,Homestay
+Manali,low,cold ,no,Mountain,yes,no,local,Rental,friendly,Peak Season,Homestay
+Hawaii,medium,tropical,no,Island,yes,yes,local,Rental,friendly,Peak Season,Hotel
+Niagara Falls,medium,cold ,no,Mountain,yes,no,continental,Public,acceptable,Peak Season,Homestay
+Rome ,high,warm,yes,River,yes,yes,local,Public,acceptable,Off-Season,Hotel
+Vatican City,high,cold ,yes,Mountain,yes,no,continental,Public,acceptable,Off-Season,Hotel
+Sri Lanka,low,tropical,yes,Coastal,yes,no,local,Rental,friendly,Peak Season,Homestay
+Philippines,low,tropical,no,Island,yes,yes,local,Rental,friendly,Off-Season,Hotel
+Budapest,medium,humid,yes,Forest,yes,no,continental,Public,acceptable,Peak Season,Hostel
+South Africa,medium,warm,yes,Desert,yes,no,local,Rental,friendly,Off-Season,Hostel
+Moscow,medium,cold ,no,Flat,yes,yes,continental,Public,acceptable,Peak Season,Hotel
