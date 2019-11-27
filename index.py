@@ -19,10 +19,25 @@ def getNearestRelocation():
         'moderate': 1,
         'high': 2
     }
+    rent = {
+        'under $200': 0,
+        '$200 to $700': 1,
+        'above $700': 2
+    }
     education = {
         'graduate': 0,
         'high school': 1,
         'college': 2
+    }
+    taxes = {
+        'under 5%': 0,
+        '5% to 15%': 1,
+        'above 15%': 2
+    }
+    crime = {
+        'low': 0,
+        'moderate': 1,
+        'high': 2
     }
     pop_density = {
         'high': 2,
@@ -310,8 +325,12 @@ def getNearestVacation():
 
     for i in range(0, len(res)):
         del res[i]['vector']
+    final_res = {
+        'city1': res[0],
+        'city2': res[1]
+    }
     #print(locations)
-    return jsonify(sorted(res, key = lambda i: i['similarity'], reverse=True)) , 200
+    return jsonify(final_res) , 200
 
 if __name__ == '__main__':
     # run() method of Flask class runs the application
