@@ -1,0 +1,6 @@
+Timestamp,Please choose your place of preference,Housing cost per square foot,Major mode of transport ,Weather,Crime rate,Population Density,Living Expenses,Cost of Relocation,Distance from other cities,Traffic,Standard of Education,Taxes
+2019/11/24 10:05:59 PM MST,"San Francisco, CA",$200 to $700,Airways,Tropical,Moderate,Moderate,$40k to $100k,$5k to $20k,10 to 50 miles,Moderate,High School,7.5 % to 8.7%
+2019/11/24 10:08:51 PM MST,"San Francisco, CA",$200 to $700,Public road transport,Warm,Low,Moderate,Under $40k,Under $5k,10 to 50 miles,Low,Graduate,Under 7.5%
+2019/11/25 4:04:22 PM MST,"New York city, NY",$200 to $700,private road transport,Warm,Low,Moderate,$40k to $100k,Under $5k,10 to 50 miles,Moderate,Graduate,Above 8.7%
+2019/11/25 4:05:13 PM MST,"Los Angeles, CA",$200 to $700,Public road transport,Dry,Moderate,High,$40k to $100k,$5k to $20k,10 to 50 miles,High,High School,7.5% to 8.7%
+,,,,,,,,,,, ,

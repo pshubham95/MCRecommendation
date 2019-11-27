@@ -30,13 +30,13 @@ def getNearestRelocation():
         'college': 2
     }
     taxes = {
-        'under 5%': 0,
-        '5% to 15%': 1,
-        'above 15%': 2
+        'above 8.7%': 2,
+        '7.5% to 8.7%': 1,
+        'under 7.5%': 0
     }
     crime = {
         'low': 0,
-        'moderate': 1,
+        'medium': 1,
         'high': 2
     }
     pop_density = {
@@ -57,9 +57,9 @@ def getNearestRelocation():
     df = pd.read_csv('Relocation Cities.csv')
     for index, row in df.iterrows():
         t = [
-                row['Taxes'],
-                row['crime rate'],
-                row['Housing Costs (Rent)'],
+                taxes[row['Taxes'].lower().strip()],
+                crime[row['crime rate'].lower().strip()],
+                rent[row['Housing Costs (Rent)'].lower().strip()],
                 traffic[row['Traffic'].lower().strip()],
                 education[row['Standard of Education'].lower().strip()],
                 pop_density[row['Population density'].lower().strip()],
@@ -134,9 +134,9 @@ def getNearestRelocation():
         })
 
     vector_cmp = [
-        content['taxes'],
-        content['crime_rate'],
-        content['rent'],
+        taxes[content['taxes'].lower().strip()],
+        crime[content['crime_rate'].lower().strip()],
+        rent[content['rent'].lower().strip()],
         traffic[content['traffic'].lower().strip()],
         education[content['standard_of_education'].lower().strip()],
         pop_density[content['population_density'].lower().strip()],
@@ -206,8 +206,12 @@ def getNearestRelocation():
 
     for i in range(0, len(res)):
         del res[i]['vector']
-
-    return jsonify(sorted(res, key = lambda i: i['similarity'], reverse=True)) , 200
+    final_res = {
+        'city1': res[0],
+        'city2': res[1]
+    }
+    # print(locations)
+    return jsonify(final_res), 200
 
 @app.route('/getNearestVacation', methods=['post'])
 def getNearestVacation():
@@ -325,6 +329,7 @@ def getNearestVacation():
 
     for i in range(0, len(res)):
         del res[i]['vector']
+
     final_res = {
         'city1': res[0],
         'city2': res[1]
