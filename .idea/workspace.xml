@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="472a35d6-e80c-416f-bf9f-cbf5fda94de5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Relocation Cities.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Relocation Cities.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/index.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recommendation.py" beforeDir="false" afterPath="$PROJECT_DIR$/recommendation.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +46,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.index">
+  <component name="RunManager" selected="Python.recommendation">
     <configuration name="index" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="MC Recommendation Model" />
       <option name="INTERPRETER_OPTIONS" value="" />

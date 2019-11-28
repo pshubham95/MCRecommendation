@@ -10,7 +10,7 @@ U, sigma, Vt = svds(R_demeaned, k = 2)
 sigma = np.diag(sigma)
 all_user_predicted_ratings = np.dot(np.dot(U, sigma), Vt) + user_ratings_mean.reshape(-1, 1)
 preds_df = pd.DataFrame(all_user_predicted_ratings, columns = R_df.columns)
-
+print(df)
 #already_rated, predictions = recommend_movies(preds_df, 1, movies_df, ratings_df, 10)
 
 print(preds_df)
