@@ -750,7 +750,7 @@ def getNearestVacation():
             'location': row['Locations'].lower().strip(),
             'budget':row['Budget'].lower().strip(),
             'weather': row['Weather'].lower().strip(),
-            'image_url': row['Image Url'].lower().strip(),
+            'image_url': 'https://mcfinalprojectml.herokuapp.com/static/vacation/'+row['Image Url'].lower().strip(),
             'historical_places': row['Historical places'].lower().strip(),
             'type_of_terrain': row['Type of Terrain'].lower().strip(),
             'family_friendly': row['Family Friendly'].lower().strip(),
