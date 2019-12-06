@@ -176,9 +176,110 @@ def getRecommendations():
             print(final_res)
 
         #R_df = df.pivot(index=0, columns=1, values=2).fillna(0)
-    else:
-        print('do random')
 
+    else:
+        if type.lower() == 'vacation':
+            df_v = pd.read_csv('Vacation_citites.csv')
+            df_l = list(df_v['Locations'])
+            random_list = list(set(df_l) - set(content['alreadyPresentCities']))
+            import random
+            list_of_random_items = random.sample(df_l, 3)
+            city1 = df_l.index(list_of_random_items[0])
+            city2 = df_l.index(list_of_random_items[1])
+            city3 = df_l.index(list_of_random_items[2])
+            final_res = {
+                'city1': {
+                    'location': df_v['Locations'][city1].lower().strip(),
+                    'budget': df_v['Budget'][city1].lower().strip(),
+                    'weather': df_v['Weather'][city1].lower().strip(),
+                    'image_url': df_v['Image Url'][city1].lower().strip(),
+                    'historical_places': df_v['Historical places'][city1].lower().strip(),
+                    'type_of_terrain': df_v['Type of Terrain'][city1].lower().strip(),
+                    'family_friendly': df_v['Family Friendly'][city1].lower().strip(),
+                    'party_places': df_v['Party Places'][city1].lower().strip(),
+                    'cuisine': df_v['Cuisine'][city1].lower().strip(),
+                    'transport': df_v['Local Transport'][city1].lower().strip(),
+                    'social_env': df_v['Social Enviroment'][city1].lower().strip(),
+                    'season': df_v['Season'][city1].lower().strip(),
+                    'accomodation': df_v['Accomodation'][city1].lower().strip(),
+                },
+                'city2': {
+                    'location': df_v['Locations'][city2].lower().strip(),
+                    'budget': df_v['Budget'][city2].lower().strip(),
+                    'weather': df_v['Weather'][city2].lower().strip(),
+                    'image_url': df_v['Image Url'][city2].lower().strip(),
+                    'historical_places': df_v['Historical places'][city2].lower().strip(),
+                    'type_of_terrain': df_v['Type of Terrain'][city2].lower().strip(),
+                    'family_friendly': df_v['Family Friendly'][city2].lower().strip(),
+                    'party_places': df_v['Party Places'][city2].lower().strip(),
+                    'cuisine': df_v['Cuisine'][city2].lower().strip(),
+                    'transport': df_v['Local Transport'][city2].lower().strip(),
+                    'social_env': df_v['Social Enviroment'][city2].lower().strip(),
+                    'season': df_v['Season'][city2].lower().strip(),
+                    'accomodation': df_v['Accomodation'][city2].lower().strip(),
+                },
+                'city3': {
+                    'location': df_v['Locations'][city3].lower().strip(),
+                    'budget': df_v['Budget'][city3].lower().strip(),
+                    'weather': df_v['Weather'][city3].lower().strip(),
+                    'image_url': df_v['Image Url'][city3].lower().strip(),
+                    'historical_places': df_v['Historical places'][city3].lower().strip(),
+                    'type_of_terrain': df_v['Type of Terrain'][city3].lower().strip(),
+                    'family_friendly': df_v['Family Friendly'][city3].lower().strip(),
+                    'party_places': df_v['Party Places'][city3].lower().strip(),
+                    'cuisine': df_v['Cuisine'][city3].lower().strip(),
+                    'transport': df_v['Local Transport'][city3].lower().strip(),
+                    'social_env': df_v['Social Enviroment'][city3].lower().strip(),
+                    'season': df_v['Season'][city3].lower().strip(),
+                    'accomodation': df_v['Accomodation'][city3].lower().strip(),
+                }
+            }
+            return jsonify(final_res), 200
+        else:
+            pd_r = pd.read_csv('Relocation Cities.csv')
+            df_l = list(pd_r['City'])
+            random_list = list(set(df_l) - set(content['alreadyPresentCities']))
+            import random
+            list_of_random_items = random.sample(df_l, 3)
+            city1 = df_l.index(list_of_random_items[0])
+            city2 = df_l.index(list_of_random_items[1])
+            city3 = df_l.index(list_of_random_items[2])
+            final_res = {
+                'city1': {
+                    'city': pd_r['City'][city1].lower().strip(),
+                    'taxes': pd_r['Taxes'][city1],
+                    'crime_rate': pd_r['crime rate'][city1],
+                    'image_url': pd_r['Image link'][city1],
+                    'rent': pd_r['Housing Costs (Rent)'][city1],
+                    'traffic': pd_r['Traffic'][city1].lower().strip(),
+                    'standard_of_education': pd_r['Standard of Education'][city1].lower().strip(),
+                    'population_density': pd_r['Population density'][city1].lower().strip(),
+                    'living_expense': pd_r['Living Expenses'][city1].lower().strip(),
+                    'dist_cities': pd_r['distance from other cities'][city1].lower().strip(),
+                }, 'city2': {
+                    'city': pd_r['City'][city2].lower().strip(),
+                    'taxes': pd_r['Taxes'][city2],
+                    'crime_rate': pd_r['crime rate'][city2],
+                    'image_url': pd_r['Image link'][city2],
+                    'rent': pd_r['Housing Costs (Rent)'][city2],
+                    'traffic': pd_r['Traffic'][city2].lower().strip(),
+                    'standard_of_education': pd_r['Standard of Education'][city2].lower().strip(),
+                    'population_density': pd_r['Population density'][city2].lower().strip(),
+                    'living_expense': pd_r['Living Expenses'][city2].lower().strip(),
+                    'dist_cities': pd_r['distance from other cities'][city2].lower().strip(),
+                }, 'city3': {
+                    'city': pd_r['City'][city3].lower().strip(),
+                    'taxes': pd_r['Taxes'][city3],
+                    'crime_rate': pd_r['crime rate'][city3],
+                    'image_url': pd_r['Image link'][city3],
+                    'rent': pd_r['Housing Costs (Rent)'][city3],
+                    'traffic': pd_r['Traffic'][city3].lower().strip(),
+                    'standard_of_education': pd_r['Standard of Education'][city3].lower().strip(),
+                    'population_density': pd_r['Population density'][city3].lower().strip(),
+                    'living_expense': pd_r['Living Expenses'][city3].lower().strip(),
+                    'dist_cities': pd_r['distance from other cities'][city3].lower().strip(),
+                }
+            }
     return jsonify(final_res), 200
 
     con.close()
