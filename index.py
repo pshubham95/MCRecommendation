@@ -37,8 +37,11 @@ def getRecommendations():
     for row in rows:
         id.append(row[0])
     if user_id in id:
-        table_name = ''
-
+        #table_name = ''
+        if type.lower().strip() == 'vacation':
+            table_name = 'user_ratings_vacation'
+        else:
+            table_name = 'user_ratings_relocation'
         cur.execute('select * from '+table_name+' order by user_id')
         rows = cur.fetchall()
         df = pd.DataFrame(rows)
