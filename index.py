@@ -479,7 +479,7 @@ def getNearestRelocation():
             'city': row['City'].lower().strip(),
             'taxes': row['Taxes'],
             'crime_rate': row['crime rate'],
-            'image_url': row['Image link'],
+            'image_url': 'https://mcfinalprojectml.herokuapp.com/static/relocation/'+row['Image link'],
             'rent': row['Housing Costs (Rent)'],
             'traffic': row['Traffic'].lower().strip(),
             'standard_of_education': row['Standard of Education'].lower().strip(),
