@@ -36,6 +36,7 @@ def getRecommendations():
     final_res = {}
     for row in rows:
         id.append(row[0])
+    #print(id)
     if user_id in id:
         #table_name = ''
         if type.lower().strip() == 'vacation':
@@ -57,7 +58,10 @@ def getRecommendations():
         sigma = np.diag(sigma)
         all_user_predicted_ratings = np.dot(np.dot(U, sigma), Vt) + user_ratings_mean.reshape(-1, 1)
         preds_df = pd.DataFrame(all_user_predicted_ratings, columns=R_df.columns)
-        index = user_id - min(id)
+        t_user = list(set(df['User']))
+        t_user.sort()
+        index = t_user.index(user_id)
+        print(t_user)
         sorted_val = list(preds_df.iloc[index])
         col = list(preds_df.columns)
         f = []
