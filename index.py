@@ -569,6 +569,117 @@ def getNearestRelocation():
     # print(locations)
     return jsonify(final_res), 200
 
+@app.route('/getVacationCity', methods=['post'])
+def getVacationCity():
+    content = request.get_json(silent=True)
+    budget = {
+        'high': 2,
+        'medium': 1,
+        'low': 0
+    }
+    weather = {
+        'cold': 0,
+        'warm': 1,
+        'humid': 2,
+        'tropical': 3
+    }
+    historical = {
+        'yes': 1,
+        'no': 0
+    }
+    terrain = {
+        'flat': 0,
+        'mountain': 1,
+        'river': 2,
+        'coastal': 3,
+        'island': 4,
+        'forest': 5,
+        'desert': 6
+    }
+
+    family_friendly = {
+        'yes': 1,
+        'no': 0
+    }
+
+    cuisine = {
+        'continental': 0,
+        'local': 1,
+    }
+
+    transport = {
+        'public': 0,
+        'rental': 1
+    }
+
+    social_env = {
+        'friendly': 0,
+        'acceptable': 1
+    }
+
+    party = {
+        'yes': 1,
+        'no': 0
+    }
+    season = {
+        'peak season': 0,
+        'off-season': 1
+    }
+
+    accomodation = {
+        'hotel': 0,
+        'homestay': 1,
+        'hostel': 2
+    }
+
+    df = pd.read_csv('Vacation_citites.csv')
+    locations = {}
+    for index, row in df.iterrows():
+        if row['Locations'].lower().strip() == content['city'].lower().strip():
+            locations = {
+                'location': row['Locations'].lower().strip(),
+                'budget': row['Budget'].lower().strip(),
+                'weather': row['Weather'].lower().strip(),
+                'image_url': row['Image Url'].lower().strip(),
+                'historical_places': row['Historical places'].lower().strip(),
+                'type_of_terrain': row['Type of Terrain'].lower().strip(),
+                'family_friendly': row['Family Friendly'].lower().strip(),
+                'party_places': row['Party Places'].lower().strip(),
+                'cuisine': row['Cuisine'].lower().strip(),
+                'transport': row['Local Transport'].lower().strip(),
+                'social_env': row['Social Enviroment'].lower().strip(),
+                'season': row['Season'].lower().strip(),
+                'accomodation': row['Accomodation'].lower().strip(),
+                'vector': [budget[row['Budget'].lower().strip()],
+                           weather[row['Weather'].lower().strip()],
+                           historical[row['Historical places'].lower().strip()],
+                           terrain[row['Type of Terrain'].lower().strip()],
+                           family_friendly[row['Family Friendly'].lower().strip()],
+                           party[row['Party Places'].lower().strip()],
+                           cuisine[row['Cuisine'].lower().strip()],
+                           transport[row['Local Transport'].lower().strip()],
+                           social_env[row['Social Enviroment'].lower().strip()],
+                           season[row['Season'].lower().strip()],
+                           accomodation[row['Accomodation'].lower().strip()]]
+            }
+    vector_cmp = [
+        budget[content['budget'].lower().strip()],
+        weather[content['weather'].lower().strip()],
+        historical[content['historical'].lower().strip()],
+        terrain[content['terrain'].lower().strip()],
+        family_friendly[content['family_friendly'].lower().strip()],
+        party[content['party'].lower().strip()],
+        cuisine[content['cuisine'].lower().strip()],
+        transport[content['transport'].lower().strip()],
+        social_env[content['social_env'].lower().strip()],
+        season[content['season'].lower().strip()],
+        accomodation[content['accomodation'].lower().strip()]
+    ]
+    locations['similarity'] = 1 - spatial.distance.cosine(locations['vector'], vector_cmp)
+    del locations['vector']
+    return jsonify(locations), 200
+
+
 @app.route('/getNearestVacation', methods=['post'])
 def getNearestVacation():
     locations = []
