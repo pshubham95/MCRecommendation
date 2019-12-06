@@ -173,6 +173,199 @@ def getRecommendations():
 
     con.close()
     return 'hello'
+
+@app.route('/getRelocationCity', methods=['post'])
+def getRelocationCity():
+    content = request.get_json(silent=True)
+    traffic = {
+        'low': 0,
+        'moderate': 1,
+        'high': 2
+    }
+    rent = {
+        'under $200': 0,
+        '$200 to $700': 1,
+        'above $700': 2
+    }
+    education = {
+        'graduate': 0,
+        'high school': 1,
+        'college': 2
+    }
+    taxes = {
+        'above 8.7%': 2,
+        '7.5% to 8.7%': 1,
+        'under 7.5%': 0
+    }
+    crime = {
+        'low': 0,
+        'medium': 1,
+        'high': 2
+    }
+    pop_density = {
+        'high': 2,
+        'moderate': 1,
+        'low': 0
+    }
+    living_expense = {
+        'under 40k': 0,
+        '40k to 100k': 1,
+        'more than 100k': 2
+    }
+    dist_from_cities = {
+        'under 10 miles': 0,
+        '10 to 50 miles': 1,
+        'more than 100 miles': 2
+    }
+    df = pd.read_csv('Relocation Cities.csv')
+    location = {}
+    print(content['city'])
+    for index, row in df.iterrows():
+        print(row['City'].lower().strip())
+        if row['City'].lower().strip() == content['city'].lower().strip():
+            t = [
+                    taxes[row['Taxes'].lower().strip()],
+                    crime[row['crime rate'].lower().strip()],
+                    rent[row['Housing Costs (Rent)'].lower().strip()],
+                    traffic[row['Traffic'].lower().strip()],
+                    education[row['Standard of Education'].lower().strip()],
+                    pop_density[row['Population density'].lower().strip()],
+                    living_expense[row['Living Expenses'].lower().strip()],
+                    dist_from_cities[row['distance from other cities'].lower().strip()]
+                ]
+            weather = row['weather'].split(' ')
+            local_transport = row['access of local transport'].split()
+            for i in range(0, len(weather)):
+                weather[i] = weather[i].lower().strip()
+
+            if 'cold' in weather:
+                t.append(1)
+            else:
+                t.append(-1)
+
+            if 'humid' in weather:
+                t.append(1)
+            else:
+                t.append(-1)
+
+            if 'dry' in weather:
+                t.append(1)
+            else:
+                t.append(-1)
+
+            if 'warm' in weather:
+                t.append(1)
+            else:
+                t.append(-1)
+
+            if 'hot' in weather:
+                t.append(1)
+            else:
+                t.append(-1)
+
+            for i in range(0, len(local_transport)):
+                local_transport[i] = local_transport[i].lower().strip()
+
+            if 'road' in local_transport:
+                t.append(1)
+            else:
+                t.append(-1)
+
+            if 'water' in local_transport:
+                t.append(1)
+            else:
+                t.append(-1)
+
+            if 'metro' in local_transport:
+                t.append(1)
+            else:
+                t.append(-1)
+
+            if 'air' in local_transport:
+                t.append(1)
+            else:
+                t.append(-1)
+
+            location = {
+                'city': row['City'].lower().strip(),
+                'taxes': row['Taxes'],
+                'crime_rate': row['crime rate'],
+                'image_url': row['Image link'],
+                'rent': row['Housing Costs (Rent)'],
+                'traffic': row['Traffic'].lower().strip(),
+                'standard_of_education': row['Standard of Education'].lower().strip(),
+                'population_density': row['Population density'].lower().strip(),
+                'living_expense': row['Living Expenses'].lower().strip(),
+                'dist_cities': row['distance from other cities'].lower().strip(),
+                'vector': t
+            }
+
+    vector_cmp = [
+        taxes[content['taxes'].lower().strip()],
+        crime[content['crime_rate'].lower().strip()],
+        rent[content['rent'].lower().strip()],
+        traffic[content['traffic'].lower().strip()],
+        education[content['standard_of_education'].lower().strip()],
+        pop_density[content['population_density'].lower().strip()],
+        living_expense[content['living_expenses'].lower().strip()],
+        dist_from_cities[content['distance_from_other_cities'].lower().strip()]
+    ]
+    weather = content['weather']
+    local_transport = content['access_of_local_transport']
+    for i in range(0, len(weather)):
+        weather[i] = weather[i].lower().strip()
+
+    if 'cold' in weather:
+        vector_cmp.append(1)
+    else:
+        vector_cmp.append(-1)
+
+    if 'humid' in weather:
+        vector_cmp.append(1)
+    else:
+        vector_cmp.append(-1)
+
+    if 'dry' in weather:
+        vector_cmp.append(1)
+    else:
+        vector_cmp.append(-1)
+
+    if 'warm' in weather:
+        vector_cmp.append(1)
+    else:
+        vector_cmp.append(-1)
+
+    if 'hot' in weather:
+        vector_cmp.append(1)
+    else:
+        vector_cmp.append(-1)
+
+    for i in range(0, len(local_transport)):
+        local_transport[i] = local_transport[i].lower().strip()
+
+    if 'road' in local_transport:
+        vector_cmp.append(1)
+    else:
+        vector_cmp.append(-1)
+
+    if 'water' in local_transport:
+        vector_cmp.append(1)
+    else:
+        vector_cmp.append(-1)
+
+    if 'metro' in local_transport:
+        vector_cmp.append(1)
+    else:
+        vector_cmp.append(-1)
+
+    if 'air' in local_transport:
+        vector_cmp.append(1)
+    else:
+        vector_cmp.append(-1)
+    location['similarity'] = 1 - spatial.distance.cosine(location['vector'], vector_cmp)
+    del location['vector']
+    return jsonify(location), 200
+
 @app.route('/getNearestRelocation', methods=['post'])
 def getNearestRelocation():
     locations = []
