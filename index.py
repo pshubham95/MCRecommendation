@@ -23,19 +23,22 @@ def getRecommendations():
     user_id = content['userId']
     type = content['type']
     already_present = content['alreadyPresentCities']
+    if type.lower().strip() == 'vacation':
+        table_name = 'user_ratings_vacation'
+    else:
+        table_name = 'user_ratings_relocation'
+
     cur = con.cursor()
-    cur.execute("SELECT id from user_details")
+    cur.execute("SELECT user_id from "+table_name)
     rows = cur.fetchall()
     id = []
     print(rows)
+    final_res = {}
     for row in rows:
         id.append(row[0])
     if user_id in id:
         table_name = ''
-        if type.lower().strip() == 'vacation':
-            table_name = 'user_ratings_vacation'
-        else:
-            table_name = 'user_ratings_relocation'
+
         cur.execute('select * from '+table_name+' order by user_id')
         rows = cur.fetchall()
         df = pd.DataFrame(rows)
